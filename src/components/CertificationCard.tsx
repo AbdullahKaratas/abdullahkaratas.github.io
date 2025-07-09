@@ -30,17 +30,17 @@ export function CertificationCard({
   const isStarted = progress > 0;
 
   return (
-    <Card className="group hover:shadow-glow transition-all duration-300 transform hover:scale-[1.02] bg-card/50 backdrop-blur-sm border-2 hover:border-primary/30">
+    <Card className="group hover:shadow-terminal transition-all duration-300 transform hover:scale-[1.02] bg-card border-terminal/50 hover:border-terminal">
       <CardHeader className="pb-4">
         <div className="flex items-start justify-between">
           <div className="space-y-2">
-            <Badge variant="secondary" className="bg-gradient-azure text-white font-semibold">
+            <Badge variant="secondary" className="bg-gradient-terminal text-background font-mono font-semibold border border-primary">
               {code}
             </Badge>
-            <CardTitle className="text-xl font-bold gradient-text">{title}</CardTitle>
+            <CardTitle className="text-xl font-bold text-terminal font-mono">{title}</CardTitle>
           </div>
-          <div className="p-2 rounded-lg bg-gradient-azure">
-            <BookOpen className="h-6 w-6 text-white" />
+          <div className="p-2 rounded-lg bg-gradient-terminal border border-primary">
+            <BookOpen className="h-6 w-6 text-background" />
           </div>
         </div>
         <CardDescription className="text-muted-foreground">
@@ -51,13 +51,13 @@ export function CertificationCard({
       <CardContent className="space-y-4">
         <div className="space-y-2">
           <div className="flex justify-between text-sm">
-            <span className="text-muted-foreground">Progress</span>
-            <span className="font-medium">{completedQuestions}/{totalQuestions} questions</span>
+            <span className="text-muted-foreground font-mono">Progress</span>
+            <span className="font-medium font-mono text-terminal">{completedQuestions}/{totalQuestions} questions</span>
           </div>
-          <Progress value={progress} className="h-2" />
+          <Progress value={progress} className="h-2 bg-muted border border-primary/30" />
         </div>
         
-        <div className="grid grid-cols-2 gap-4 text-sm">
+        <div className="grid grid-cols-2 gap-4 text-sm font-mono">
           <div className="flex items-center gap-2 text-muted-foreground">
             <Clock className="h-4 w-4" />
             <span>{estimatedTime}</span>
@@ -73,15 +73,15 @@ export function CertificationCard({
             <div className="space-y-2">
               <Button 
                 onClick={onContinue}
-                variant="azure"
+                variant="terminal"
                 className="w-full"
               >
                 Continue Learning
               </Button>
               {progress >= 80 && (
-                <div className="flex items-center gap-2 text-success text-sm font-medium">
+                <div className="flex items-center gap-2 text-success text-sm font-medium font-mono">
                   <Trophy className="h-4 w-4" />
-                  Almost ready for exam!
+                  <span className="terminal-output">Almost ready for exam!</span>
                 </div>
               )}
             </div>
@@ -91,7 +91,7 @@ export function CertificationCard({
               variant="hero"
               className="w-full"
             >
-              Start Learning
+              <span className="terminal-prompt">Start Learning</span>
             </Button>
           )}
         </div>

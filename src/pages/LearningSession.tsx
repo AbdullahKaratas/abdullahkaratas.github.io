@@ -91,7 +91,7 @@ export default function LearningSession({ certification, onBack }: LearningSessi
   const progressPercentage = totalAnswered > 0 ? (totalAnswered / questions.length) * 100 : 0;
 
   return (
-    <div className="min-h-screen bg-gradient-background">
+    <div className="min-h-screen bg-gradient-dark">
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
@@ -101,12 +101,12 @@ export default function LearningSession({ certification, onBack }: LearningSessi
             </Button>
             <div>
               <div className="flex items-center gap-2">
-                <Badge variant="secondary" className="bg-gradient-azure text-white">
+                <Badge variant="secondary" className="bg-gradient-terminal text-background font-mono border border-primary">
                   {certification}
                 </Badge>
-                <h1 className="text-2xl font-bold">Learning Session</h1>
+                <h1 className="text-2xl font-bold font-mono text-terminal">Learning Session</h1>
               </div>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground font-mono">
                 {mode === "content" 
                   ? "Add your study material to generate practice questions"
                   : `Question ${currentQuestionIndex + 1} of ${questions.length}`
@@ -137,16 +137,16 @@ export default function LearningSession({ certification, onBack }: LearningSessi
         {mode === "practice" && !sessionComplete && currentQuestion && (
           <div className="space-y-6">
             {/* Progress Bar */}
-            <Card className="bg-card/80 backdrop-blur-sm">
+            <Card className="bg-card border-terminal/50 hover:border-terminal transition-all duration-300">
               <CardContent className="p-4">
                 <div className="space-y-2">
-                  <div className="flex justify-between text-sm">
+                  <div className="flex justify-between text-sm font-mono">
                     <span>Session Progress</span>
-                    <span>{totalAnswered}/{questions.length} answered</span>
+                    <span className="text-terminal">{totalAnswered}/{questions.length} answered</span>
                   </div>
-                  <Progress value={progressPercentage} className="h-2" />
+                  <Progress value={progressPercentage} className="h-2 bg-muted border border-primary/30" />
                   {totalAnswered > 0 && (
-                    <div className="flex justify-between text-sm">
+                    <div className="flex justify-between text-sm font-mono">
                       <span className={getScoreColor((correctAnswers / totalAnswered) * 100)}>
                         Correct: {correctAnswers}/{totalAnswered}
                       </span>
@@ -173,37 +173,37 @@ export default function LearningSession({ certification, onBack }: LearningSessi
         {/* Session Complete */}
         {sessionComplete && (
           <div className="max-w-2xl mx-auto space-y-6">
-            <Card className="text-center bg-card/80 backdrop-blur-sm shadow-glow">
+            <Card className="text-center bg-card border-terminal hover:shadow-terminal transition-all duration-300">
               <CardHeader className="pb-4">
-                <div className="mx-auto p-4 bg-gradient-azure rounded-full w-fit mb-4">
-                  <Trophy className="h-12 w-12 text-white" />
+                <div className="mx-auto p-4 bg-gradient-terminal border border-primary rounded-lg w-fit mb-4">
+                  <Trophy className="h-12 w-12 text-background" />
                 </div>
-                <CardTitle className="text-3xl gradient-text">Session Complete!</CardTitle>
-                <CardDescription className="text-lg">
+                <CardTitle className="text-3xl font-mono text-terminal">Session Complete!</CardTitle>
+                <CardDescription className="text-lg font-mono">
                   Great job on completing your {certification} practice session
                 </CardDescription>
               </CardHeader>
               
               <CardContent className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="p-4 rounded-lg bg-muted/50">
-                    <div className="text-2xl font-bold">{correctAnswers}/{questions.length}</div>
-                    <div className="text-sm text-muted-foreground">Questions Correct</div>
+                  <div className="p-4 rounded-lg bg-muted border border-primary/30">
+                    <div className="text-2xl font-bold font-mono text-terminal">{correctAnswers}/{questions.length}</div>
+                    <div className="text-sm text-muted-foreground font-mono">Questions Correct</div>
                   </div>
-                  <div className="p-4 rounded-lg bg-muted/50">
-                    <div className={`text-2xl font-bold ${getScoreColor((correctAnswers / questions.length) * 100)}`}>
+                  <div className="p-4 rounded-lg bg-muted border border-primary/30">
+                    <div className={`text-2xl font-bold font-mono ${getScoreColor((correctAnswers / questions.length) * 100)}`}>
                       {Math.round((correctAnswers / questions.length) * 100)}%
                     </div>
-                    <div className="text-sm text-muted-foreground">Accuracy</div>
+                    <div className="text-sm text-muted-foreground font-mono">Accuracy</div>
                   </div>
-                  <div className="p-4 rounded-lg bg-muted/50">
-                    <div className="text-2xl font-bold">{questions.length}</div>
-                    <div className="text-sm text-muted-foreground">Total Questions</div>
+                  <div className="p-4 rounded-lg bg-muted border border-primary/30">
+                    <div className="text-2xl font-bold font-mono text-terminal">{questions.length}</div>
+                    <div className="text-sm text-muted-foreground font-mono">Total Questions</div>
                   </div>
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button variant="azure" onClick={handleRestart}>
+                  <Button variant="terminal" onClick={handleRestart}>
                     <RefreshCw className="h-4 w-4 mr-2" />
                     Retry Session
                   </Button>

@@ -5,23 +5,23 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-azure hover:shadow-glow",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-terminal",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+          "border border-primary bg-background text-primary hover:bg-primary/10 hover:shadow-terminal",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
-        azure: "bg-gradient-azure text-white hover:bg-gradient-azure-light shadow-azure hover:shadow-glow transform hover:scale-105",
-        success: "bg-success text-success-foreground hover:bg-success/90 shadow-lg",
-        warning: "bg-warning text-warning-foreground hover:bg-warning/90 shadow-lg",
-        hero: "bg-gradient-azure text-white hover:bg-gradient-azure-light shadow-glow hover:shadow-azure transform hover:scale-105 animate-pulse-glow",
+        ghost: "hover:bg-muted hover:text-foreground",
+        link: "text-primary underline-offset-4 hover:underline hover:text-cyan",
+        terminal: "bg-gradient-terminal text-background font-mono hover:shadow-terminal transform hover:scale-105 border border-primary",
+        success: "bg-success text-success-foreground hover:bg-success/90 shadow-terminal",
+        warning: "bg-warning text-warning-foreground hover:bg-warning/90",
+        hero: "bg-gradient-terminal text-background font-mono shadow-terminal hover:shadow-cyan transform hover:scale-105 animate-terminal-glow border border-primary",
       },
       size: {
         default: "h-10 px-4 py-2",

@@ -2,65 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Azure Certification Learning Platform Design System
-All colors MUST be HSL - Azure themed with deep blues and modern gradients
+/* Developer Terminal Learning Platform Design System
+Dark terminal aesthetic with green/cyan accents and monospace fonts
 */
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 210 25% 98%;
-    --foreground: 210 60% 8%;
+    /* Terminal dark theme */
+    --background: 210 20% 6%;
+    --foreground: 120 15% 85%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 210 60% 8%;
+    /* Card backgrounds */
+    --card: 210 25% 8%;
+    --card-foreground: 120 15% 85%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 210 60% 8%;
+    --popover: 210 25% 8%;
+    --popover-foreground: 120 15% 85%;
 
-    /* Azure Primary - Deep Azure Blue */
-    --primary: 211 81% 36%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 211 81% 45%;
+    /* Terminal green primary */
+    --primary: 150 100% 45%;
+    --primary-foreground: 210 20% 6%;
+    --primary-glow: 150 100% 55%;
 
-    /* Azure Secondary - Light Azure */
-    --secondary: 210 25% 95%;
-    --secondary-foreground: 210 60% 8%;
+    /* Muted terminal gray */
+    --secondary: 210 15% 12%;
+    --secondary-foreground: 120 15% 70%;
 
-    /* Azure Accent - Microsoft Blue */
-    --accent: 206 100% 50%;
-    --accent-foreground: 0 0% 100%;
+    /* Cyan accent */
+    --accent: 180 100% 50%;
+    --accent-foreground: 210 20% 6%;
 
-    --muted: 210 25% 95%;
-    --muted-foreground: 210 20% 45%;
+    --muted: 210 15% 10%;
+    --muted-foreground: 120 10% 55%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 85% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 15% 88%;
-    --input: 210 15% 88%;
-    --ring: 211 81% 36%;
+    /* Success - bright terminal green */
+    --success: 120 100% 45%;
+    --success-foreground: 210 20% 6%;
 
-    /* Success colors for correct answers */
-    --success: 142 71% 45%;
-    --success-foreground: 0 0% 100%;
+    /* Warning - terminal yellow */
+    --warning: 45 100% 55%;
+    --warning-foreground: 210 20% 6%;
 
-    /* Warning colors for review items */
-    --warning: 43 89% 55%;
-    --warning-foreground: 0 0% 100%;
+    --border: 210 20% 15%;
+    --input: 210 20% 12%;
+    --ring: 150 100% 45%;
 
-    /* Azure gradients */
-    --gradient-azure: linear-gradient(135deg, hsl(211 81% 36%), hsl(206 100% 50%));
-    --gradient-azure-light: linear-gradient(135deg, hsl(211 81% 45%), hsl(206 100% 60%));
-    --gradient-background: linear-gradient(180deg, hsl(210 25% 98%), hsl(210 25% 95%));
+    /* Terminal-style gradients */
+    --gradient-terminal: linear-gradient(135deg, hsl(150 100% 45%), hsl(180 100% 50%));
+    --gradient-dark: linear-gradient(180deg, hsl(210 20% 6%), hsl(210 25% 8%));
+    --gradient-code: linear-gradient(90deg, hsl(210 20% 6%), hsl(210 25% 8%));
 
-    /* Shadows with Azure glow */
-    --shadow-azure: 0 10px 30px -10px hsl(211 81% 36% / 0.3);
-    --shadow-glow: 0 0 40px hsl(211 81% 45% / 0.2);
-    --shadow-card: 0 4px 20px hsl(210 20% 20% / 0.08);
+    /* Terminal glow effects */
+    --shadow-terminal: 0 0 20px hsl(150 100% 45% / 0.3);
+    --shadow-cyan: 0 0 20px hsl(180 100% 50% / 0.3);
+    --shadow-card: 0 4px 20px hsl(210 25% 4% / 0.4);
 
-    /* Animations */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    /* Smooth terminal animations */
+    --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-glow: all 0.3s ease;
 
     --radius: 0.5rem;
 
@@ -81,49 +85,38 @@ All colors MUST be HSL - Azure themed with deep blues and modern gradients
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
+  }
+
   .dark {
-    --background: 210 50% 6%;
-    --foreground: 210 25% 95%;
-
-    --card: 210 50% 8%;
-    --card-foreground: 210 25% 95%;
-
-    --popover: 210 50% 8%;
-    --popover-foreground: 210 25% 95%;
-
-    --primary: 206 100% 50%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 206 100% 60%;
-
-    --secondary: 210 40% 12%;
-    --secondary-foreground: 210 25% 95%;
-
-    --accent: 211 81% 45%;
-    --accent-foreground: 0 0% 100%;
-
-    --muted: 210 40% 12%;
-    --muted-foreground: 210 20% 65%;
-
-    --destructive: 0 62.8% 50%;
+    /* Already optimized for dark terminal theme */
+    --background: 210 20% 6%;
+    --foreground: 120 15% 85%;
+    --card: 210 25% 8%;
+    --card-foreground: 120 15% 85%;
+    --popover: 210 25% 8%;
+    --popover-foreground: 120 15% 85%;
+    --primary: 150 100% 45%;
+    --primary-foreground: 210 20% 6%;
+    --secondary: 210 15% 12%;
+    --secondary-foreground: 120 15% 70%;
+    --accent: 180 100% 50%;
+    --accent-foreground: 210 20% 6%;
+    --muted: 210 15% 10%;
+    --muted-foreground: 120 10% 55%;
+    --destructive: 0 85% 55%;
     --destructive-foreground: 0 0% 100%;
-
-    --success: 142 71% 45%;
-    --success-foreground: 0 0% 100%;
-
-    --warning: 43 89% 55%;
-    --warning-foreground: 0 0% 100%;
-
-    --border: 210 40% 15%;
-    --input: 210 40% 15%;
-    --ring: 206 100% 50%;
-
-    --gradient-azure: linear-gradient(135deg, hsl(206 100% 50%), hsl(211 81% 45%));
-    --gradient-azure-light: linear-gradient(135deg, hsl(206 100% 60%), hsl(211 81% 55%));
-    --gradient-background: linear-gradient(180deg, hsl(210 50% 6%), hsl(210 50% 8%));
-
-    --shadow-azure: 0 10px 30px -10px hsl(206 100% 50% / 0.4);
-    --shadow-glow: 0 0 40px hsl(206 100% 50% / 0.3);
-    --shadow-card: 0 4px 20px hsl(210 60% 4% / 0.3);
+    --success: 120 100% 45%;
+    --success-foreground: 210 20% 6%;
+    --warning: 45 100% 55%;
+    --warning-foreground: 210 20% 6%;
+    --border: 210 20% 15%;
+    --input: 210 20% 12%;
+    --ring: 150 100% 45%;
+    --gradient-terminal: linear-gradient(135deg, hsl(150 100% 45%), hsl(180 100% 50%));
+    --gradient-dark: linear-gradient(180deg, hsl(210 20% 6%), hsl(210 25% 8%));
+    --shadow-terminal: 0 0 20px hsl(150 100% 45% / 0.3);
+    --shadow-cyan: 0 0 20px hsl(180 100% 50% / 0.3);
+    --shadow-card: 0 4px 20px hsl(210 25% 4% / 0.4);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -140,65 +133,83 @@ All colors MUST be HSL - Azure themed with deep blues and modern gradients
     @apply border-border;
   }
 
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
   body {
     @apply bg-background text-foreground;
-    background: linear-gradient(180deg, hsl(var(--background)), hsl(var(--muted)));
+    background: hsl(var(--background));
     min-height: 100vh;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
   }
 
-  /* Custom animations */
-  .animate-glow {
-    animation: glow 2s ease-in-out infinite alternate;
+  /* Terminal font for code and technical elements */
+  .font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+    font-feature-settings: 'liga' 1, 'calt' 1;
   }
 
-  .animate-float {
-    animation: float 3s ease-in-out infinite;
+  /* Terminal-style animations */
+  .animate-terminal-glow {
+    animation: terminal-glow 2s ease-in-out infinite alternate;
   }
 
-  .animate-pulse-glow {
-    animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  .animate-cursor {
+    animation: cursor-blink 1s infinite;
   }
 
-  @keyframes glow {
+  .animate-scan-line {
+    animation: scan-line 3s linear infinite;
+  }
+
+  @keyframes terminal-glow {
     from {
-      box-shadow: var(--shadow-azure);
+      box-shadow: var(--shadow-terminal);
+      border-color: hsl(var(--primary));
     }
     to {
-      box-shadow: var(--shadow-glow);
+      box-shadow: var(--shadow-cyan);
+      border-color: hsl(var(--accent));
     }
   }
 
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
+  @keyframes cursor-blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
   }
 
-  @keyframes pulse-glow {
-    0%, 100% {
-      opacity: 1;
-      box-shadow: var(--shadow-azure);
-    }
-    50% {
-      opacity: 0.8;
-      box-shadow: var(--shadow-glow);
-    }
+  @keyframes scan-line {
+    0% { transform: translateY(-100%); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(100vh); opacity: 0; }
   }
 
-  /* Gradient text */
-  .gradient-text {
-    background: var(--gradient-azure);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+  /* Terminal text effects */
+  .text-terminal {
+    color: hsl(var(--primary));
+    text-shadow: 0 0 10px hsl(var(--primary) / 0.5);
   }
 
-  /* Custom scrollbar */
+  .text-cyan {
+    color: hsl(var(--accent));
+    text-shadow: 0 0 10px hsl(var(--accent) / 0.5);
+  }
+
+  /* Terminal-style borders */
+  .border-terminal {
+    border: 1px solid hsl(var(--primary));
+    box-shadow: 0 0 10px hsl(var(--primary) / 0.3);
+  }
+
+  .border-cyan {
+    border: 1px solid hsl(var(--accent));
+    box-shadow: 0 0 10px hsl(var(--accent) / 0.3);
+  }
+
+  /* Custom scrollbar - terminal style */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
   }
 
   ::-webkit-scrollbar-track {
@@ -207,10 +218,23 @@ All colors MUST be HSL - Azure themed with deep blues and modern gradients
 
   ::-webkit-scrollbar-thumb {
     background: hsl(var(--primary));
-    border-radius: 4px;
+    border-radius: 3px;
+    box-shadow: 0 0 5px hsl(var(--primary) / 0.5);
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--primary-glow));
+    background: hsl(var(--accent));
+    box-shadow: 0 0 5px hsl(var(--accent) / 0.5);
+  }
+
+  /* Terminal prompt styles */
+  .terminal-prompt::before {
+    content: '$ ';
+    color: hsl(var(--primary));
+  }
+
+  .terminal-output::before {
+    content: '> ';
+    color: hsl(var(--accent));
   }
 }

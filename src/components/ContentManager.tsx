@@ -89,11 +89,11 @@ export function ContentManager({ certification, onContentProcessed }: ContentMan
       <Card>
         <CardHeader>
           <div className="flex items-center gap-3">
-            <div className="p-2 rounded-lg bg-gradient-azure">
-              <Brain className="h-5 w-5 text-white" />
+            <div className="p-2 rounded-lg bg-gradient-terminal border border-primary">
+              <Brain className="h-5 w-5 text-background" />
             </div>
             <div>
-              <CardTitle>Content & Question Generator</CardTitle>
+              <CardTitle className="font-mono text-terminal">Content & Question Generator</CardTitle>
               <CardDescription>
                 Paste your study material to generate practice questions for {certification}
               </CardDescription>
@@ -138,7 +138,7 @@ export function ContentManager({ certification, onContentProcessed }: ContentMan
                   <Button
                     onClick={generateQuestions}
                     disabled={isProcessing || !content.trim()}
-                    variant="azure"
+                    variant="terminal"
                     className="min-w-[200px]"
                   >
                     {isProcessing ? (

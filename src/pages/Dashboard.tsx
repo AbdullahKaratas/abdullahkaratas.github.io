@@ -48,74 +48,74 @@ export default function Dashboard({ onSelectCertification }: DashboardProps) {
   const totalQuestions = certifications.reduce((acc, cert) => acc + cert.totalQuestions, 0);
 
   return (
-    <div className="min-h-screen bg-gradient-background">
+    <div className="min-h-screen bg-gradient-dark">
       <div className="container mx-auto px-4 py-8 space-y-8">
         {/* Header */}
         <div className="text-center space-y-4">
-          <div className="inline-flex items-center gap-3 p-4 bg-card/80 backdrop-blur-sm rounded-2xl shadow-card">
-            <div className="p-3 rounded-xl bg-gradient-azure">
-              <BookOpen className="h-8 w-8 text-white" />
+          <div className="inline-flex items-center gap-3 p-4 bg-card border border-terminal rounded-lg shadow-card">
+            <div className="p-3 rounded-lg bg-gradient-terminal border border-primary">
+              <BookOpen className="h-8 w-8 text-background" />
             </div>
             <div className="text-left">
-              <h1 className="text-3xl font-bold gradient-text">Azure Certification Hub</h1>
-              <p className="text-muted-foreground">Master AZ-104, AZ-305 & AZ-400 with AI-powered learning</p>
+              <h1 className="text-3xl font-bold text-terminal font-mono">Azure Certification Hub</h1>
+              <p className="text-muted-foreground font-mono">Master AZ-104, AZ-305 & AZ-400 with AI-powered learning</p>
             </div>
           </div>
         </div>
 
         {/* Stats Overview */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-          <Card className="bg-card/80 backdrop-blur-sm border-2 hover:border-primary/30 transition-all duration-300">
+          <Card className="bg-card border-terminal/50 hover:border-terminal transition-all duration-300 hover:shadow-terminal">
             <CardContent className="p-6">
               <div className="flex items-center gap-4">
-                <div className="p-3 rounded-lg bg-gradient-azure">
-                  <Target className="h-6 w-6 text-white" />
+                <div className="p-3 rounded-lg bg-gradient-terminal border border-primary">
+                  <Target className="h-6 w-6 text-background" />
                 </div>
                 <div>
-                  <p className="text-2xl font-bold">{Math.round(totalProgress)}%</p>
-                  <p className="text-sm text-muted-foreground">Overall Progress</p>
+                  <p className="text-2xl font-bold font-mono text-terminal">{Math.round(totalProgress)}%</p>
+                  <p className="text-sm text-muted-foreground font-mono">Overall Progress</p>
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="bg-card/80 backdrop-blur-sm border-2 hover:border-primary/30 transition-all duration-300">
+          <Card className="bg-card border-terminal/50 hover:border-terminal transition-all duration-300 hover:shadow-terminal">
             <CardContent className="p-6">
               <div className="flex items-center gap-4">
-                <div className="p-3 rounded-lg bg-success">
+                <div className="p-3 rounded-lg bg-success border border-success">
                   <Trophy className="h-6 w-6 text-success-foreground" />
                 </div>
                 <div>
-                  <p className="text-2xl font-bold">{totalCompleted}</p>
-                  <p className="text-sm text-muted-foreground">Questions Completed</p>
+                  <p className="text-2xl font-bold font-mono text-terminal">{totalCompleted}</p>
+                  <p className="text-sm text-muted-foreground font-mono">Questions Completed</p>
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="bg-card/80 backdrop-blur-sm border-2 hover:border-primary/30 transition-all duration-300">
+          <Card className="bg-card border-terminal/50 hover:border-terminal transition-all duration-300 hover:shadow-terminal">
             <CardContent className="p-6">
               <div className="flex items-center gap-4">
-                <div className="p-3 rounded-lg bg-warning">
+                <div className="p-3 rounded-lg bg-warning border border-warning">
                   <TrendingUp className="h-6 w-6 text-warning-foreground" />
                 </div>
                 <div>
-                  <p className="text-2xl font-bold">{totalQuestions}</p>
-                  <p className="text-sm text-muted-foreground">Total Questions</p>
+                  <p className="text-2xl font-bold font-mono text-terminal">{totalQuestions}</p>
+                  <p className="text-sm text-muted-foreground font-mono">Total Questions</p>
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="bg-card/80 backdrop-blur-sm border-2 hover:border-primary/30 transition-all duration-300">
+          <Card className="bg-card border-terminal/50 hover:border-terminal transition-all duration-300 hover:shadow-terminal">
             <CardContent className="p-6">
               <div className="flex items-center gap-4">
-                <div className="p-3 rounded-lg bg-accent">
+                <div className="p-3 rounded-lg bg-accent border border-accent">
                   <Calendar className="h-6 w-6 text-accent-foreground" />
                 </div>
                 <div>
-                  <p className="text-2xl font-bold">7</p>
-                  <p className="text-sm text-muted-foreground">Day Streak</p>
+                  <p className="text-2xl font-bold font-mono text-terminal">7</p>
+                  <p className="text-sm text-muted-foreground font-mono">Day Streak</p>
                 </div>
               </div>
             </CardContent>
@@ -123,30 +123,30 @@ export default function Dashboard({ onSelectCertification }: DashboardProps) {
         </div>
 
         {/* Progress Overview */}
-        <Card className="bg-card/80 backdrop-blur-sm">
+        <Card className="bg-card border-terminal/50 hover:border-terminal transition-all duration-300">
           <CardHeader>
             <div className="flex items-center justify-between">
               <div>
-                <CardTitle className="flex items-center gap-2">
+                <CardTitle className="flex items-center gap-2 font-mono text-terminal">
                   <TrendingUp className="h-5 w-5" />
                   Learning Progress
                 </CardTitle>
-                <CardDescription>
+                <CardDescription className="font-mono">
                   Track your journey across all Azure certifications
                 </CardDescription>
               </div>
-              <Badge variant="secondary" className="bg-gradient-azure text-white">
+              <Badge variant="secondary" className="bg-gradient-terminal text-background font-mono border border-primary">
                 {Math.round(totalProgress)}% Complete
               </Badge>
             </div>
           </CardHeader>
           <CardContent>
             <div className="space-y-2">
-              <div className="flex justify-between text-sm">
+              <div className="flex justify-between text-sm font-mono">
                 <span>Overall Progress</span>
-                <span>{totalCompleted} / {totalQuestions} questions</span>
+                <span className="text-terminal">{totalCompleted} / {totalQuestions} questions</span>
               </div>
-              <Progress value={totalProgress} className="h-3" />
+              <Progress value={totalProgress} className="h-3 bg-muted border border-primary/30" />
             </div>
           </CardContent>
         </Card>
@@ -154,10 +154,9 @@ export default function Dashboard({ onSelectCertification }: DashboardProps) {
         {/* Certification Cards */}
         <div className="space-y-6">
           <div className="flex items-center justify-between">
-            <h2 className="text-2xl font-bold">Your Certifications</h2>
-            <Button variant="outline" size="sm">
-              <Settings className="h-4 w-4 mr-2" />
-              Manage
+            <h2 className="text-2xl font-bold font-mono text-terminal">Your Certifications</h2>
+            <Button variant="outline" size="sm" className="font-mono">
+              <span className="terminal-prompt">Manage</span>
             </Button>
           </div>
           
