@@ -1,14 +1,31 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import Dashboard from "./Dashboard";
+import LearningSession from "./LearningSession";
 
 const Index = () => {
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
-  );
+  const [currentView, setCurrentView] = useState<"dashboard" | "learning">("dashboard");
+  const [selectedCertification, setSelectedCertification] = useState<string>("");
+
+  const handleSelectCertification = (cert: string) => {
+    setSelectedCertification(cert);
+    setCurrentView("learning");
+  };
+
+  const handleBackToDashboard = () => {
+    setCurrentView("dashboard");
+    setSelectedCertification("");
+  };
+
+  if (currentView === "learning") {
+    return (
+      <LearningSession
+        certification={selectedCertification}
+        onBack={handleBackToDashboard}
+      />
+    );
+  }
+
+  return <Dashboard onSelectCertification={handleSelectCertification} />;
 };
 
 export default Index;
