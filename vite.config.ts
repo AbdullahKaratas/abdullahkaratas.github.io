@@ -5,6 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: '/azure-exam-prep-ace/',
   server: {
     host: "::",
     port: 8080,
