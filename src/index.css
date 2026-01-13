@@ -1,130 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Developer Terminal Learning Platform Design System
-Dark terminal aesthetic with green/cyan accents and monospace fonts
-*/
-
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap');
-
 @layer base {
   :root {
-    /* Terminal dark theme */
-    --background: 210 20% 6%;
-    --foreground: 120 15% 85%;
+    /* Professional minimal theme */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
 
-    /* Card backgrounds */
-    --card: 210 25% 8%;
-    --card-foreground: 120 15% 85%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
 
-    --popover: 210 25% 8%;
-    --popover-foreground: 120 15% 85%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
 
-    /* Terminal green primary */
-    --primary: 150 100% 45%;
-    --primary-foreground: 210 20% 6%;
-    --primary-glow: 150 100% 55%;
+    /* Professional blue primary */
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
 
-    /* Muted terminal gray */
-    --secondary: 210 15% 12%;
-    --secondary-foreground: 120 15% 70%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
 
-    /* Cyan accent */
-    --accent: 180 100% 50%;
-    --accent-foreground: 210 20% 6%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-    --muted: 210 15% 10%;
-    --muted-foreground: 120 10% 55%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
 
-    --destructive: 0 85% 55%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
 
-    /* Success - bright terminal green */
-    --success: 120 100% 45%;
-    --success-foreground: 210 20% 6%;
+    --success: 142.1 76.2% 36.3%;
+    --success-foreground: 210 40% 98%;
 
-    /* Warning - terminal yellow */
-    --warning: 45 100% 55%;
-    --warning-foreground: 210 20% 6%;
+    --warning: 47.9 95.8% 53.1%;
+    --warning-foreground: 26 83.3% 14.1%;
 
-    --border: 210 20% 15%;
-    --input: 210 20% 12%;
-    --ring: 150 100% 45%;
-
-    /* Terminal-style gradients */
-    --gradient-terminal: linear-gradient(135deg, hsl(150 100% 45%), hsl(180 100% 50%));
-    --gradient-dark: linear-gradient(180deg, hsl(210 20% 6%), hsl(210 25% 8%));
-    --gradient-code: linear-gradient(90deg, hsl(210 20% 6%), hsl(210 25% 8%));
-
-    /* Terminal glow effects */
-    --shadow-terminal: 0 0 20px hsl(150 100% 45% / 0.3);
-    --shadow-cyan: 0 0 20px hsl(180 100% 50% / 0.3);
-    --shadow-card: 0 4px 20px hsl(210 25% 4% / 0.4);
-
-    /* Smooth terminal animations */
-    --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-glow: all 0.3s ease;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
 
     --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
   }
 
   .dark {
-    /* Already optimized for dark terminal theme */
-    --background: 210 20% 6%;
-    --foreground: 120 15% 85%;
-    --card: 210 25% 8%;
-    --card-foreground: 120 15% 85%;
-    --popover: 210 25% 8%;
-    --popover-foreground: 120 15% 85%;
-    --primary: 150 100% 45%;
-    --primary-foreground: 210 20% 6%;
-    --secondary: 210 15% 12%;
-    --secondary-foreground: 120 15% 70%;
-    --accent: 180 100% 50%;
-    --accent-foreground: 210 20% 6%;
-    --muted: 210 15% 10%;
-    --muted-foreground: 120 10% 55%;
-    --destructive: 0 85% 55%;
-    --destructive-foreground: 0 0% 100%;
-    --success: 120 100% 45%;
-    --success-foreground: 210 20% 6%;
-    --warning: 45 100% 55%;
-    --warning-foreground: 210 20% 6%;
-    --border: 210 20% 15%;
-    --input: 210 20% 12%;
-    --ring: 150 100% 45%;
-    --gradient-terminal: linear-gradient(135deg, hsl(150 100% 45%), hsl(180 100% 50%));
-    --gradient-dark: linear-gradient(180deg, hsl(210 20% 6%), hsl(210 25% 8%));
-    --shadow-terminal: 0 0 20px hsl(150 100% 45% / 0.3);
-    --shadow-cyan: 0 0 20px hsl(180 100% 50% / 0.3);
-    --shadow-card: 0 4px 20px hsl(210 25% 4% / 0.4);
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --success: 142.1 70.6% 45.3%;
+    --success-foreground: 210 40% 98%;
+
+    --warning: 47.9 95.8% 53.1%;
+    --warning-foreground: 26 83.3% 14.1%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
   }
 }
 
@@ -139,102 +93,12 @@ Dark terminal aesthetic with green/cyan accents and monospace fonts
 
   body {
     @apply bg-background text-foreground;
-    background: hsl(var(--background));
     min-height: 100vh;
     font-feature-settings: 'rlig' 1, 'calt' 1;
   }
 
-  /* Terminal font for code and technical elements */
   .font-mono {
     font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
     font-feature-settings: 'liga' 1, 'calt' 1;
-  }
-
-  /* Terminal-style animations */
-  .animate-terminal-glow {
-    animation: terminal-glow 2s ease-in-out infinite alternate;
-  }
-
-  .animate-cursor {
-    animation: cursor-blink 1s infinite;
-  }
-
-  .animate-scan-line {
-    animation: scan-line 3s linear infinite;
-  }
-
-  @keyframes terminal-glow {
-    from {
-      box-shadow: var(--shadow-terminal);
-      border-color: hsl(var(--primary));
-    }
-    to {
-      box-shadow: var(--shadow-cyan);
-      border-color: hsl(var(--accent));
-    }
-  }
-
-  @keyframes cursor-blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
-  }
-
-  @keyframes scan-line {
-    0% { transform: translateY(-100%); opacity: 0; }
-    50% { opacity: 1; }
-    100% { transform: translateY(100vh); opacity: 0; }
-  }
-
-  /* Terminal text effects */
-  .text-terminal {
-    color: hsl(var(--primary));
-    text-shadow: 0 0 10px hsl(var(--primary) / 0.5);
-  }
-
-  .text-cyan {
-    color: hsl(var(--accent));
-    text-shadow: 0 0 10px hsl(var(--accent) / 0.5);
-  }
-
-  /* Terminal-style borders */
-  .border-terminal {
-    border: 1px solid hsl(var(--primary));
-    box-shadow: 0 0 10px hsl(var(--primary) / 0.3);
-  }
-
-  .border-cyan {
-    border: 1px solid hsl(var(--accent));
-    box-shadow: 0 0 10px hsl(var(--accent) / 0.3);
-  }
-
-  /* Custom scrollbar - terminal style */
-  ::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: hsl(var(--muted));
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: hsl(var(--primary));
-    border-radius: 3px;
-    box-shadow: 0 0 5px hsl(var(--primary) / 0.5);
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--accent));
-    box-shadow: 0 0 5px hsl(var(--accent) / 0.5);
-  }
-
-  /* Terminal prompt styles */
-  .terminal-prompt::before {
-    content: '$ ';
-    color: hsl(var(--primary));
-  }
-
-  .terminal-output::before {
-    content: '> ';
-    color: hsl(var(--accent));
   }
 }
