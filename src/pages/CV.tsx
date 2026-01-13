@@ -9,9 +9,9 @@ export default function CV() {
   const t = {
     de: {
       role: 'Enterprise Architect',
-      subtitle: 'Cloud-Architekturen · Technische Führung · Digitale Transformation',
+      subtitle: 'Deep Learning · Enterprise Architecture · Cloud Platforms',
       about: 'Kurzprofil',
-      aboutText: 'Enterprise Architect mit Promotion in AI/Machine Learning. Aktuell verantwortlich für Cloud-Architekturen und technische Führung. Besonderes Interesse an der Anwendung von AI in Enterprise-Kontexten.',
+      aboutText: 'Verbindung von Forschungshintergrund in Deep Learning und Neural Networks mit Enterprise-Plattform-Entwicklung. Promotion mit Anwendung von Machine Learning für Industrie 4.0. Aktuell interessiert an AI Agents und LLMs für Enterprise-Anwendungen.',
       onThisPage: 'Auf dieser Seite',
       onThisPageText: 'Berufserfahrung, ausgewählte Projekte, Zertifizierungen und Kompetenzen.',
       projects: 'Ausgewählte Projekte',
@@ -32,9 +32,9 @@ export default function CV() {
     },
     en: {
       role: 'Enterprise Architect',
-      subtitle: 'Cloud Architecture · Technical Leadership · Digital Transformation',
+      subtitle: 'Deep Learning · Enterprise Architecture · Cloud Platforms',
       about: 'Profile',
-      aboutText: 'Enterprise Architect with a PhD in AI/Machine Learning. Currently responsible for cloud architectures and technical leadership. Particular interest in applying AI in enterprise contexts.',
+      aboutText: 'Combining a research background in Deep Learning and Neural Networks with enterprise platform development. PhD research applied machine learning to Industry 4.0 challenges. Currently exploring AI agents and LLMs for enterprise applications.',
       onThisPage: 'On this page',
       onThisPageText: 'Work experience, selected projects, certifications, and skills.',
       projects: 'Selected Projects',
