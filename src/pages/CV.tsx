@@ -123,6 +123,9 @@ export default function CV() {
                 <a href="#projects" className="text-neutral-500 hover:text-neutral-900 transition-colors">
                   {t.projects}
                 </a>
+                <a href="#certifications" className="text-neutral-500 hover:text-neutral-900 transition-colors">
+                  {t.certifications}
+                </a>
                 <a href="#experience" className="text-neutral-500 hover:text-neutral-900 transition-colors">
                   {t.experience}
                 </a>
@@ -273,7 +276,7 @@ export default function CV() {
         </section>
 
         {/* Certifications */}
-        <section className="bg-neutral-50 py-16 md:py-24">
+        <section id="certifications" className="bg-neutral-50 py-16 md:py-24">
           <div className="max-w-5xl mx-auto px-6">
             <h2 className="text-sm font-medium text-neutral-400 uppercase tracking-wider mb-10">
               {t.certifications}
